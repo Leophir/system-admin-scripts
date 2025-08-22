@@ -1,0 +1,45 @@
+# Environment files
+.env
+
+# Log files
+*.log
+*.log.*
+
+# Archive files
+*.archive
+
+# Temporary files
+*.tmp
+.tmp/
+temp/
+
+# Media files
+*.mp3
+*.mp4
+*.m4a
+*.webm
+
+# Playlist files
+playlist*.txt
+playlist*.spotdl
+
+# Error logs
+*_errors.log
+
+# System stats
+system_stats/
+
+# Cookie files
+*.cookies.txt
+
+# Backup files
+*.tar.zst
+*.tar.gz
+
+# Mac OS
+.DS_Store
+
+# Editor files
+*~
+.*.swp
+.*.swo
