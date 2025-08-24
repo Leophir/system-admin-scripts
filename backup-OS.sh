@@ -41,6 +41,7 @@ fi
 if tar \
     --exclude=/mnt \
     --exclude=/srv \
+	--exclude=/root/YGG-Auto-Up \
     --exclude=/proc \
     --exclude=/sys \
     --exclude=/dev \
