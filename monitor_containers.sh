@@ -12,7 +12,10 @@ if [ -f /tmp/backup_running ]; then
     exit 0
 fi
 
-exited_containers=$(docker ps -a --filter "status=exited" --format '{{.Names}}')
+# Exclude containers that should remain stopped (e.g., canceled projects)
+EXCLUDED_CONTAINERS="MAIN_STAGING_wordpress"
+
+exited_containers=$(docker ps -a --filter "status=exited" --format '{{.Names}}' | grep -v -E "^(${EXCLUDED_CONTAINERS})$" || true)
 
 if [ -n "$exited_containers" ]; then
     log_message "Found exited containers: $exited_containers" "$LOG_FILE"
